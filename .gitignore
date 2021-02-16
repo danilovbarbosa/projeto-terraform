@@ -30,3 +30,7 @@ override.tf.json
 
 # Automatic files create for HashCorp
 *.hcl* 
+
+#SSH
+terraform-aws
+terraform-aws.pub
