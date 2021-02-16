@@ -14,25 +14,32 @@ resource "aws_instance" "dev" {
   vpc_security_group_ids = [ aws_security_group.acesso_ssh.id, ]
 }
 
-resource "aws_security_group" "acesso_ssh" {
-  name        = "acesso_ssh"
-  description = "acesso_ssh"
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["187.110.103.88/32",]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
+resource "aws_instance" "dev4" {
+  ami = "ami-02fe94dee086c0c37"
+  instance_type = "t2.micro"
+  key_name = "terraform-aws"
   tags = {
-    Name = "ssh"
+    Name = "dev4"
+  }
+  vpc_security_group_ids = [ aws_security_group.acesso_ssh.id, ]
+  depends_on = [ aws_s3_bucket.bucket-lab-dev4 ]
+}
+
+resource "aws_instance" "dev5" {
+  ami = "ami-02fe94dee086c0c37"
+  instance_type = "t2.micro"
+  key_name = "terraform-aws"
+  tags = {
+    Name = "dev5"
+  }
+  vpc_security_group_ids = [ aws_security_group.acesso_ssh.id, ]
+}
+
+resource "aws_s3_bucket" "bucket-lab-dev4" {
+  bucket = "bucket-lab-dev4"
+  acl    = "private"
+  
+  tags = {
+    Name = "bucket-lab-dev4"
   }
 }
