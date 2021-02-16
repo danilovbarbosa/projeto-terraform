@@ -25,6 +25,10 @@ terraform plan
 ```shell
 terraform apply
 ```
+### VERIFICAR O IP
+
+https://whatismyip.com.br/
+
 
 ### TESTE MANUAL
 * Para testar acesse:
