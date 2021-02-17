@@ -37,7 +37,7 @@ resource "aws_instance" "dev5" {
   vpc_security_group_ids = [ aws_security_group.acesso_ssh.id, ]
 }
 
-/*
+
 resource "aws_s3_bucket" "bucket-lab-dev4" {
   bucket = "bucket-lab-dev4"
   acl    = "private"
@@ -46,5 +46,4 @@ resource "aws_s3_bucket" "bucket-lab-dev4" {
     Name = "bucket-lab-dev4"
   }
 }
-*/
 
