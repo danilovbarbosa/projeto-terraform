@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_instance" "dev" {
   count = 3
-  ami = "ami-02fe94dee086c0c37"
+  ami = var.amis["us-east-1"]
   instance_type = "t2.micro"
   key_name = "terraform-aws"
   tags = {
