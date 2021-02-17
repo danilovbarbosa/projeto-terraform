@@ -43,3 +43,4 @@ resource "aws_s3_bucket" "bucket-lab-dev4" {
     Name = "bucket-lab-dev4"
   }
 }
+
