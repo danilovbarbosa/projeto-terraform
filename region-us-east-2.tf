@@ -8,7 +8,7 @@ resource "aws_instance" "dev6" {
   provider = aws.us-east-2
   ami = "ami-01aab85a5e4a5a0fe"
   instance_type = "t2.micro"
-  key_name = "terraform-aws"
+  key_name = var.key_name
   tags = {
     Name = "dev6"
   }

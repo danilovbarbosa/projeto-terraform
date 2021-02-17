@@ -15,3 +15,7 @@ variable "cdirs_acesso_remoto" {
       "187.110.103.88/32"
   ]
 }
+
+variable "key_name" {
+  default = "terraform-aws"
+}
