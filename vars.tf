@@ -7,3 +7,11 @@ variable "amis" {
 
   }
 }
+
+variable "cdirs_acesso_remoto" {
+  type = list
+
+  default = [
+      "187.110.103.88/32"
+  ]
+}
