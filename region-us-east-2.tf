@@ -13,13 +13,13 @@ resource "aws_instance" "dev6" {
     Name = "dev6"
   }
   vpc_security_group_ids = [ aws_security_group.acesso_ssh_us_east_2.id, ]
+  depends_on = [ aws_dynamodb_table.dynamodb-homologacao, ]
 }
 
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
+resource "aws_dynamodb_table" "dynamodb-homologacao" {
+  provider = aws.us-east-2
   name           = "GameScores"
-  billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 20
+  billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "UserId"
   range_key      = "GameTitle"
 
